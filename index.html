@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clémentin Perrault – Portfolio</title>
+<meta name="description" content="Portfolio de Clémentin Perrault, étudiant en BUT Génie Mécanique et Productique à l'IUT de Saint-Denis, en alternance chez Sofripa Logistique.">
+<meta name="theme-color" content="#1f3b4d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#fcfaf6;
+  --sable:#f3ede2;
+  --ciel:#dfecee;
+  --sauge-pale:#e7eee3;
+  --mer:#1f3b4d;
+  --mer-fonce:#162c3a;
+  --turquoise:#2f6f86;
+  --turquoise-clair:#8fbac5;
+  --sauge:#6f9071;
+  --rose:#ead3cb;
+  --rose-fonce:#b9776a;
+  --gris:#4d5f6b;
+  --ligne:#dcd5c8;
+  --titre:'Fraunces',Georgia,'Times New Roman',serif;
+  --texte:'Figtree','Helvetica Neue',Arial,sans-serif;
+  --r:16px;
+  --marge:clamp(1.25rem,5vw,4rem);
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--texte);font-size:1.0625rem;line-height:1.72;color:var(--mer);background:var(--papier);-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:var(--turquoise);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rose-fonce);outline-offset:3px}
+h1,h2,h3,h4,h5{font-family:var(--titre);color:var(--mer);line-height:1.15;margin:0 0 .6em;font-weight:600}
+h2{font-size:clamp(2rem,5vw,3rem)}
+h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin-top:.55em;background:linear-gradient(90deg,var(--turquoise),var(--sauge))}
+h3{font-size:clamp(1.4rem,3vw,1.7rem);margin-top:2.2em}
+h4{font-family:var(--texte);font-size:1.08rem;font-weight:700}
+h5{font-family:var(--texte);font-weight:700}
+p{margin:0 0 1.1em;max-width:68ch}
+strong{font-weight:600}
+ul{margin:0 0 1.2em;padding-left:1.2em;max-width:68ch}
+li{margin-bottom:.4em}
+
+/* navigation */
+.barre{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne);display:flex;align-items:center;gap:1.5rem;padding:.7rem var(--marge)}
+.barre .marque{font-family:var(--titre);font-weight:600;font-size:1.15rem;color:var(--mer);text-decoration:none;white-space:nowrap}
+.barre nav{display:flex;gap:1.25rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.barre nav::-webkit-scrollbar{display:none}
+.barre nav a{font-weight:500;font-size:.95rem;color:var(--gris);text-decoration:none;white-space:nowrap;padding:.3rem 0;border-bottom:2px solid transparent}
+.barre nav a:hover{color:var(--mer);border-bottom-color:var(--turquoise)}
+
+/* sections */
+.sec{padding:clamp(3.5rem,9vw,6.5rem) var(--marge)}
+.sec>.in{max-width:var(--max);margin:0 auto}
+.sec.clair{background:var(--sable)}
+.sec.sombre{background:var(--mer);color:#e4edf0}
+.sec.sombre h2,.sec.sombre h3,.sec.sombre h4{color:var(--papier)}
+.sec.sombre h2::after{background:linear-gradient(90deg,var(--turquoise-clair),var(--rose))}
+.sec.sombre a{color:#bfe0e8}
+.sec.sombre strong{color:#fff}
+
+/* accueil */
+.accueil{background:var(--ciel);overflow:hidden}
+.accueil .grille{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center;padding:clamp(2.5rem,7vw,5rem) var(--marge)}
+.accueil h1{font-size:clamp(3rem,10vw,5.8rem);line-height:.98;margin:0 0 .4em;letter-spacing:-.02em}
+.accueil h1 span{display:block;color:var(--turquoise)}
+.accueil .chapeau{font-size:clamp(1.1rem,2.3vw,1.3rem);color:var(--gris);max-width:40ch}
+.accueil .boutons{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.btn{display:inline-block;font-family:var(--texte);font-weight:600;font-size:1rem;text-decoration:none;padding:.8rem 1.5rem;border:2px solid var(--mer);color:var(--mer);border-radius:999px;background:transparent}
+.btn.plein{background:var(--mer);color:var(--papier)}
+.btn:hover{background:var(--turquoise);border-color:var(--turquoise);color:#fff}
+.accueil figure{position:relative;margin:0}
+.accueil figure::before{content:"";position:absolute;inset:16px -14px -14px 16px;background:var(--rose);border-radius:28px}
+.accueil figure img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:0 14px 40px rgba(31,59,77,.18)}
+@media (max-width:820px){
+  .accueil .grille{grid-template-columns:1fr}
+  .accueil figure{order:-1;margin-right:14px}
+  .accueil figure img{aspect-ratio:4/3}
+}
+
+/* mises en page */
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.deux.inverse figure{order:2}
+@media (max-width:820px){.deux{grid-template-columns:1fr}.deux.inverse figure{order:0}}
+figure{margin:0}
+figure img{width:100%;height:auto;border-radius:var(--r)}
+figure.cadre img{aspect-ratio:4/5;object-fit:cover;box-shadow:0 10px 30px rgba(31,59,77,.14)}
+figcaption{font-size:.9rem;color:var(--gris);margin-top:.6rem}
+.sombre figcaption{color:#b5c9d0}
+.intro{font-size:clamp(1.15rem,2.5vw,1.4rem);line-height:1.55}
+
+/* aperçu des projets */
+.apercu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem;margin-top:2rem}
+.apercu>div{background:var(--sable);border-radius:var(--r);padding:1.3rem 1.4rem;border-top:5px solid var(--turquoise)}
+.apercu>div:nth-child(2){border-top-color:var(--sauge)}
+.apercu>div:nth-child(3){border-top-color:var(--turquoise-clair)}
+.apercu>div:nth-child(4){border-top-color:var(--rose-fonce)}
+.apercu h4{color:var(--mer);margin-bottom:.5em}
+.apercu ul{padding-left:1.1em;margin:0}
+
+/* cartographie */
+.carto{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin:1.5rem 0 2rem}
+.carto section{background:var(--papier);border-radius:var(--r);border-left:6px solid var(--turquoise);padding:1rem 1.2rem}
+.carto section:nth-child(2){border-left-color:var(--sauge)}
+.carto section:nth-child(3){border-left-color:var(--turquoise-clair)}
+.carto section:nth-child(4){border-left-color:var(--rose-fonce)}
+.carto section:nth-child(5){border-left-color:var(--mer)}
+.carto h4{margin-bottom:.4em}
+.carto ul{margin:0;padding-left:1.1em;font-size:1rem;line-height:1.5}
+.carto li{margin-bottom:.15em}
+
+/* devise */
+.devise{font-family:var(--titre);font-style:italic;font-weight:500;font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.25;border-left:5px solid var(--sauge);padding:.2em 0 .2em 1.1rem;margin:1.5rem 0;max-width:30ch;color:var(--mer)}
+
+/* parcours */
+.frise{list-style:none;margin:2rem 0;padding:0;max-width:680px;border-left:3px solid var(--turquoise-clair)}
+.frise li{position:relative;padding:0 0 1.8rem 1.8rem;margin:0}
+.frise li::before{content:"";position:absolute;left:-10px;top:.55rem;width:17px;height:17px;border-radius:50%;background:var(--mer);border:4px solid var(--turquoise-clair)}
+.frise .date{display:block;font-family:var(--titre);font-weight:600;font-size:1.35rem;color:var(--papier)}
+.frise .lieu{display:block;color:#cfdfe4}
+.frise .note{display:block;color:#b5c9d0;font-size:.95rem;margin-top:.15rem}
+
+.citation{background:var(--sauge-pale);border-left:5px solid var(--sauge);border-radius:0 var(--r) var(--r) 0;padding:1.3rem 1.5rem;margin:1.5rem 0 2rem;font-size:1.12rem;max-width:68ch}
+
+/* poster : compétences */
+.comp{margin:1.5rem 0 2.5rem;border-top:3px solid var(--mer)}
+.comp article{display:grid;grid-template-columns:.9fr 1fr 1fr;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--ligne)}
+.comp h4{margin:0;color:var(--turquoise)}
+.comp h5{font-size:.95rem;margin:0 0 .4em;color:var(--gris)}
+.comp ul{font-size:1rem;line-height:1.5;margin:0;padding-left:1.1em}
+.comp .lien{grid-column:1/-1;font-size:1rem;background:var(--sable);border-radius:12px;padding:.8rem 1rem;margin:0;max-width:none}
+@media (max-width:820px){.comp article{grid-template-columns:1fr;gap:.8rem}}
+
+/* panne camion */
+.etapes{list-style:none;padding:0;margin:1.2rem 0 2rem;max-width:68ch;counter-reset:e}
+.etapes li{counter-increment:e;position:relative;padding-left:2.6rem;margin-bottom:.9rem}
+.etapes li::before{content:counter(e);position:absolute;left:0;top:.05rem;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--turquoise);color:#fff;font-weight:700;font-size:.95rem;display:grid;place-items:center}
+
+.plein-cadre{margin:2rem 0}
+.plein-cadre img{border:1px solid var(--ligne);background:var(--papier)}
+
+/* QR */
+.qr{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;margin:1.5rem 0}
+.qr img{width:200px;height:200px;background:#fff;padding:10px;border-radius:12px}
+
+/* atouts */
+.trois{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin:1.5rem 0 .5rem}
+.trois div{background:var(--papier);border-radius:var(--r);border-top:5px solid var(--turquoise);padding:1rem 1.2rem}
+.trois div:nth-child(2){border-top-color:var(--sauge)}
+.trois div:nth-child(3){border-top-color:var(--rose-fonce)}
+.trois h4{margin-bottom:.3em}
+.trois p{font-size:1rem;line-height:1.5;margin:0}
+.resume{font-family:var(--titre);font-weight:600;font-size:clamp(1.3rem,3.4vw,1.9rem);line-height:1.3;border-left:5px solid var(--rose-fonce);padding:.2em 0 .2em 1.1rem;margin:1.5rem 0;max-width:34ch}
+.pastilles{list-style:none;padding:0;margin:1rem 0 1.5rem;display:flex;flex-wrap:wrap;gap:.6rem;max-width:none}
+.pastilles li{margin:0;font-weight:600;font-size:.95rem;padding:.4rem .9rem;border:1.5px solid var(--turquoise);border-radius:999px;background:var(--papier);color:var(--mer)}
+
+/* points forts à l'école */
+.exc{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin:1.5rem 0 2.2rem}
+.exc>div{background:var(--mer);color:#e4edf0;padding:clamp(1.4rem,3vw,2.2rem);border-radius:var(--r);border-top:6px solid var(--rose-fonce)}
+.exc .badge{display:inline-block;font-weight:700;font-size:.85rem;background:var(--rose);color:var(--mer);padding:.2rem .8rem;border-radius:999px;margin-bottom:.9rem}
+.exc h4{font-family:var(--titre);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);color:var(--papier);margin-bottom:.5em}
+.exc p{color:#dbe8ec;font-size:1.03rem;line-height:1.6;max-width:none;margin:0 0 .9em}
+.exc p:last-child{margin-bottom:0}
+@media (max-width:820px){.exc{grid-template-columns:1fr}}
+
+/* galeries */
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.8rem 0 2rem}
+.galerie figure:first-child{grid-column:1/-1}
+.galerie img{width:100%;height:100%;object-fit:cover}
+.galerie figure:first-child img{aspect-ratio:3/2}
+.galerie figure:not(:first-child) img{aspect-ratio:3/4}
+.galerie.g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:700px){
+  .galerie{grid-template-columns:1fr 1fr}
+  .galerie figure:last-child{grid-column:1/-1}
+  .galerie figure:last-child img{aspect-ratio:4/3}
+  .galerie.g2 figure:last-child{grid-column:auto}
+  .galerie.g2 figure:last-child img{aspect-ratio:3/4}
+}
+
+/* contact et pied de page */
+.contact h2{margin-bottom:.3em}
+.mail{font-family:var(--titre);font-weight:600;font-size:clamp(1.3rem,4.6vw,2.3rem);word-break:break-word;color:var(--papier)!important}
+footer{background:var(--mer-fonce);color:#a9bec7;padding:1.4rem var(--marge);font-size:.9rem}
+footer .in{max-width:var(--max);margin:0 auto}
+footer .credit{margin-top:.4rem;color:#8da4ae}
+</style>
+</head>
+<body>
+
+<header class="barre">
+  <a class="marque" href="#accueil">Clémentin Perrault</a>
+  <nav aria-label="Navigation principale">
+    <a href="#profil">Profil</a>
+    <a href="#formation">Formation</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#atouts">Atouts</a>
+    <a href="#sofripa">Sofripa</a>
+    <a href="#safran">Safran</a>
+    <a href="#projets">Projets</a>
+    <a href="#photographie">Photographie</a>
+    <a href="#experiences">Expériences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ACCUEIL -->
+<section class="accueil" id="accueil">
+  <div class="grille">
+    <div class="texte">
+      <h1>Clémentin <span>Perrault</span></h1>
+      <p class="chapeau">Étudiant en troisième année de BUT GMP à l'IUT de Saint-Denis, en alternance chez Sofripa, après une année chez Safran.</p>
+      <div class="boutons">
+        <a class="btn plein" href="#apercu">Voir le portfolio</a>
+        <a class="btn" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/pantheon-fresque.jpg" alt="Clémentin face à une grande fresque, entre les colonnes du Panthéon à Paris">
+    </figure>
+  </div>
+</section>
+
+<!-- BIENVENUE / POURQUOI CE PORTFOLIO -->
+<section class="sec" id="apercu">
+  <div class="in deux">
+    <div>
+      <h2>Bienvenue sur mon portfolio</h2>
+      <p class="intro">Je m'appelle Clémentin Perrault.</p>
+      <p>Je suis en troisième année de BUT Génie Mécanique et Productique (GMP) à l'IUT de Saint-Denis. Je fais mon alternance chez Sofripa, après une année chez Safran.</p>
+      <p>En dehors des cours, j'aime beaucoup de choses&nbsp;: voyager, dessiner, cuisiner, coudre, la mode, la mécanique, la photo, entreprendre. Je suis aussi très sportif (boxe et course à pied).</p>
+    </div>
+    <figure class="cadre">
+      <img src="img/pantheon-voute.jpg" alt="Vue plongeante sur les colonnes et la voûte du Panthéon, à Paris">
+    </figure>
+  </div>
+
+  <div class="in" style="margin-top:clamp(3rem,7vw,5rem)">
+    <h2>Pourquoi ce portfolio&nbsp;?</h2>
+    <p class="intro">Je voulais qu'on puisse se faire une idée claire et rapide de mon profil, en regardant des projets concrets.</p>
+    <div class="apercu">
+      <div>
+        <h4>En alternance</h4>
+        <ul>
+          <li>Gabarit d'alignement de module pour le M88 (moteur du Rafale)</li>
+          <li>Étude d'une panne sur un camion, dans des délais très serrés</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Autres expériences professionnelles</h4>
+        <ul>
+          <li>Archivage sur le site d'Arcueil (Armée de Terre)</li>
+          <li>Gardien d'immeuble</li>
+          <li>Serveur en restauration semi-gastronomique</li>
+        </ul>
+      </div>
+      <div>
+        <h4>En formation GMP</h4>
+        <ul>
+          <li>Projet de robot marcheur</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Projets personnels</h4>
+        <ul>
+          <li>Création d'une marque de vêtements</li>
+          <li>Veridia, vases décoratifs imprimés en 3D</li>
+          <li>Création d'entreprise</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUI SUIS-JE -->
+<section class="sec clair" id="profil">
+  <div class="in">
+    <div class="deux inverse">
+      <div>
+        <h2>Qui suis-je</h2>
+        <p class="intro">Je suis plutôt autonome, et je m'intéresse beaucoup à la conception et à l'amélioration des process.</p>
+        <p>J'aime comprendre comment les choses fonctionnent, passer de la théorie à la pratique et voir un projet prendre forme, de l'idée jusqu'au résultat.</p>
+        <h3 style="margin-top:1.6em">Ce qui me définit</h3>
+        <ul>
+          <li>Je fais attention aux détails</li>
+          <li>Je suis à l'aise en équipe</li>
+          <li>Les projets et les défis me motivent</li>
+          <li>Je suis ambitieux</li>
+          <li>Je suis extraverti</li>
+        </ul>
+      </div>
+      <figure class="cadre">
+        <img src="img/cour-arbres.jpg" alt="Cour d'un immeuble haussmannien et sa fontaine, sous les branches d'arbres, ciel bleu">
+      </figure>
+    </div>
+
+    <h3>Cartographie de compétences</h3>
+    <div class="carto">
+      <section>
+        <h4>Sport</h4>
+        <ul><li>Boxe</li><li>Course à pied</li></ul>
+      </section>
+      <section>
+        <h4>Intérêts</h4>
+        <ul><li>Découverte</li><li>Rencontres</li><li>Mode</li><li>Innovation</li><li>Dessin</li><li>Sport</li><li>Mécanique</li><li>Couture</li><li>Photographie</li></ul>
+      </section>
+      <section>
+        <h4>Points forts</h4>
+        <ul><li>CAO</li><li>Adaptabilité</li><li>Culture du résultat</li></ul>
+      </section>
+      <section>
+        <h4>Points faibles</h4>
+        <ul><li>Exigences</li><li>Impatience</li><li>Optimisation constante</li></ul>
+      </section>
+      <section>
+        <h4>Personnalité</h4>
+        <ul><li>Dynamique</li><li>Extraverti</li><li>Curieux</li><li>Persévérant</li><li>Résilient</li></ul>
+      </section>
+    </div>
+
+    <h3>Ma devise</h3>
+    <p class="devise">« Chaque jour est fait pour trouver un moyen de devenir la meilleure version de moi-même. »</p>
+    <p>Pour moi, cette devise veut dire que chaque jour est l'occasion d'apprendre et de progresser un peu. Même sur les petites tâches, j'essaie de m'améliorer et de bien faire.</p>
+
+    <h3>Mon état d'esprit</h3>
+    <p>Quand je travaille sur un projet, j'essaie avant tout de&nbsp;:</p>
+    <ul>
+      <li>comprendre le besoin,</li>
+      <li>proposer des solutions réalistes,</li>
+      <li>travailler de façon structurée,</li>
+      <li>aller au bout de ce qu'on me confie.</li>
+    </ul>
+    <p>Je suis méthodique, et je m'adapte facilement à un nouvel environnement.</p>
+
+    <h3>Ce qui me révolte, ce qui m'enthousiasme</h3>
+    <p>Ce qui me révolte le plus, ce sont les injustices liées au racisme et à toutes les formes de discrimination. Quand je vois la violence et les conflits que ça provoque dans le monde depuis des années, c'est insupportable. Voir des gens persécutés, rejetés, parfois tués à cause de leur couleur de peau, de leur culture ou de leurs origines me touche profondément. Ça me rappelle qu'on ne peut pas baisser les bras&nbsp;: l'égalité et nos valeurs humaines, il faut les défendre tous les jours.</p>
+    <p>Ce qui m'enthousiasme, c'est l'inverse&nbsp;: la solidarité, les victoires collectives, la richesse de nos différences. J'aime les initiatives qui rassemblent et qui permettent à chacun de trouver sa place. J'essaie d'y contribuer à mon échelle, notamment avec mon engagement à la Croix-Rouge.</p>
+    <p>À titre plus personnel, j'adore relever des défis, voir mes efforts payer et mes projets se concrétiser.</p>
+  </div>
+</section>
+
+<!-- FORMATION -->
+<section class="sec" id="formation">
+  <div class="in">
+    <figure style="max-width:460px;margin-bottom:2rem">
+      <img src="img/logo-iut.jpg" alt="Logo de l'IUT de Saint-Denis, Université Sorbonne Paris Nord">
+    </figure>
+    <h2>Pourquoi le BUT Génie Mécanique et Productique</h2>
+    <p>J'ai choisi le BUT GMP parce que j'aime la mécanique et la production, et surtout la conception et le management. J'ai d'ailleurs pris l'option supplémentaire Management de la Production Industrielle. Je voulais une formation qui mélange théorie et pratique.</p>
+    <p>L'alternance m'a attiré pour la même raison&nbsp;: on découvre le monde du travail tout en apprenant.</p>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section class="sec sombre" id="parcours">
+  <div class="in deux">
+    <div>
+      <h2>Mon parcours</h2>
+      <p>J'ai suivi un parcours orienté mécanique et industrie avant d'intégrer le BUT GMP, pour acquérir de solides bases en conception, en fabrication et en gestion de projet.</p>
+      <ol class="frise">
+        <li><span class="date">2024 – 2025</span><span class="lieu">Alternance chez Safran (BUT GMP, 2<sup>e</sup> année)</span></li>
+        <li><span class="date">2025 – 2026</span><span class="lieu">Alternance chez Sofripa (BUT GMP, 2<sup>e</sup> année)</span><span class="note">Après un changement d'établissement, à l'IUT de Saint-Denis</span></li>
+        <li><span class="date">2026 – 2027</span><span class="lieu">Alternance chez Sofripa (BUT GMP, 3<sup>e</sup> année)</span><span class="note">En cours</span></li>
+      </ol>
+      <p class="intro">Chaque étape m'a apporté de l'autonomie, une méthode et une meilleure compréhension du monde du travail.</p>
+    </div>
+    <figure class="cadre">
+      <img src="img/toits-paris.jpg" alt="Toits et balcons d'immeubles parisiens dans la lumière d'automne">
+    </figure>
+  </div>
+</section>
+
+<!-- ATOUTS -->
+<section class="sec clair" id="atouts">
+  <div class="in">
+    <h2>Compétences et points forts</h2>
+    <p class="intro">Je suis dans ma troisième année d'alternance, dans deux environnements très différents, et j'ai appris des choses précises dans chacun. Dans ma promo, je pense être un très bon élément. C'est ce que je veux montrer aux écoles et aux entreprises qui pourraient m'accueillir.</p>
+
+    <div class="trois">
+      <div><h4>Safran, 2024 – 2025</h4><p>La rigueur et la méthode, au contact d'ingénieurs.</p></div>
+      <div><h4>Sofripa, 2025 – 2026</h4><p>Le terrain&nbsp;: sang-froid, autonomie, logique.</p></div>
+      <div><h4>Sofripa, 2026 – 2027</h4><p>Organisation, gestion des stocks, management d'équipe.</p></div>
+    </div>
+
+    <h3>Safran, 2024 – 2025</h3>
+    <p>J'ai fait ma première année d'alternance chez Safran, sur le site de Villaroche, sur les programmes des moteurs LEAP et M88. Je concevais des outillages pour l'assemblage des modules moteur. Il fallait analyser et solutionner un problème en proposant un outil qui permet aux opérateurs de monter les modules dans de bonnes conditions. Le poste visait à concevoir, améliorer, solutionner et faire valider par les supérieurs, puis à dessiner l'outil et fournir les documents utiles à sa production. J'ai également beaucoup travaillé sur la correction et la rédaction de plans.</p>
+    <p>Je travaillais avec des ingénieurs qui avaient le même poste que moi, chacun dans son domaine. Ils étaient très exigeants, et ça m'a tiré vers le haut&nbsp;: on ne rend pas un plan approximatif, on justifie ses choix, et on accepte qu'un plan soit repris tant qu'il n'est pas juste. L'aéronautique demande beaucoup de rigueur et des analyses très complètes. C'est là que j'ai le plus progressé en rigueur et en méthode.</p>
+
+    <h3>Sofripa, 2025 – 2026</h3>
+    <p>Je suis ensuite passé chez Sofripa, comme technicien de maintenance du parc. C'est un tout autre univers&nbsp;: je suis passé du bureau d'études à un poste technique et manuel, en plein terrain. On y rencontre de vrais problèmes, souvent imprévus, qu'il faut régler avec de la logique, de l'adaptation et un peu de débrouillardise.</p>
+    <p>Ce poste est complexe, parce qu'il demande des qualités très différentes de celles d'un poste de conception. Il a aussi été dur mentalement, parfois vraiment éprouvant, et c'est pour ça qu'il m'a autant apporté. J'y ai développé de la résistance, du sang-froid, de l'autonomie, et la capacité à rester logique quand tout ne se passe pas comme prévu. J'ai été nommé responsable temporaire, ce qui montre la confiance qu'on m'a accordée, et pendant cette année j'ai été très utile sur toute la partie technique et manuelle.</p>
+
+    <h3>Sofripa, 2026 – 2027</h3>
+    <p>Cette année est différente&nbsp;: je fais beaucoup plus de gestion opérationnelle et de management industriel. J'appelle les bons intervenants quand il le faut, je commande des pièces chez Mercedes et Renault et j'organise la gestion des stocks. Pour m'entraîner à ce rôle, mon tuteur et mon collègue sont placés sous mes ordres, le but étant de me former à un poste de management d'équipe opérationnelle.</p>
+    <p>J'apprends à ne plus seulement réparer, mais aussi à organiser, anticiper les besoins en pièces, coordonner les gens et prendre des décisions. Ça complète bien mon profil technique.</p>
+
+    <h3>Mes points forts à l'école</h3>
+    <p>Mes résultats s'appuient sur de bonnes bases. Mais ce sont surtout deux domaines, plus concrets que les autres matières, dans lesquels je me sens vraiment à ma place&nbsp;: la CAO et les projets.</p>
+    <div class="exc">
+      <div>
+        <span class="badge">Mon point fort</span>
+        <h4>La CAO</h4>
+        <p>C'est ce que je fais le mieux. J'aime modéliser et définir une pièce ou un ensemble avec précision. Je l'ai fait au quotidien chez Safran, en dessinant des outillages et en rédigeant des plans que des ingénieurs relisaient.</p>
+        <p>C'est aussi ma façon de passer d'une idée à quelque chose qu'on peut réellement fabriquer.</p>
+      </div>
+      <div>
+        <span class="badge">Très bon niveau</span>
+        <h4>Les projets</h4>
+        <p>C'est là que je mets en pratique ce que j'ai vu en entreprise. Je m'implique à chaque étape&nbsp;: conception, usinage, communication, choix techniques, suivi qualité. J'essaie de faire avancer le groupe, d'apporter mes idées et de soutenir l'équipe.</p>
+        <p>C'est dans les projets qu'on voit vraiment la méthode, l'organisation, et si on est capable d'aller au bout.</p>
+      </div>
+    </div>
+
+    <h3>Les autres matières</h3>
+    <p>Je suis assez bon en SDM et en RDM. Je me débrouille bien en OPI, en MPI, en anglais et en communication (GMP), et je suis plutôt bon en mathématiques et en métrologie.</p>
+    <ul class="pastilles" aria-label="Matières">
+      <li>SDM</li>
+      <li>RDM</li>
+      <li>OPI</li>
+      <li>MPI</li>
+      <li>Anglais</li>
+      <li>Communication (GMP)</li>
+      <li>Mathématiques</li>
+      <li>Métrologie</li>
+    </ul>
+
+    <h3>En résumé</h3>
+    <p class="resume">Je sais concevoir, réparer, organiser et encadrer.</p>
+    <p>C'est un profil assez rare à ce stade des études. J'ai la rigueur et la culture de l'aéronautique, apprises chez Safran, et la solidité du terrain, avec le sens des responsabilités et de l'organisation, apprises chez Sofripa. À ça s'ajoute un bon niveau scolaire, surtout en conception. C'est ce mélange que je veux faire valoir auprès des écoles et des entreprises.</p>
+  </div>
+</section>
+
+<!-- SOFRIPA -->
+<section class="sec" id="sofripa">
+  <div class="in">
+    <h2>Mon alternance chez Sofripa</h2>
+    <p class="citation"><strong>Sofripa</strong> est une société spécialisée dans le <strong>transport routier de marchandises</strong>, avec une expertise particulière dans le <strong>transport frigorifique</strong>. Implantée à <strong>Wissous</strong>, elle propose des services de livraison sous température dirigée, assurés <strong>24h/24 et 7j/7</strong>. L'entreprise prend également en charge la préparation de commandes ainsi que la gestion de stocks externalisés, offrant ainsi une solution logistique complète et adaptée aux besoins des professionnels.</p>
+
+    <figure class="plein-cadre">
+      <img src="img/sofripa-plateforme.jpg" alt="Plateforme logistique Sofripa de nuit, avec des camions frigorifiques aux quais">
+    </figure>
+
+    <figure class="plein-cadre">
+      <img src="img/sofripa-mindmap.jpg" alt="Schéma de l'entreprise Sofripa : domaines d'activité, services support, forces, transport et distribution, logistique et stockage, valeurs">
+      <figcaption>Diagramme d'entreprise : Sofripa, transport et logistique sous température dirigée.</figcaption>
+    </figure>
+
+    <h3>Organigramme Sofripa</h3>
+    <figure class="plein-cadre">
+      <img src="img/sofripa-organigramme.jpg" alt="Organigramme de Sofripa, avec mon poste d'apprenti technicien de maintenance rattaché au responsable du parc maintenance">
+      <figcaption>Mon poste&nbsp;: apprenti technicien de maintenance, rattaché au responsable du parc maintenance.</figcaption>
+    </figure>
+
+    <h3>Mon expérience d'apprentissage</h3>
+    <p>La qualité de vie au travail est importante pour moi. Voici ses sources&nbsp;:</p>
+    <ul>
+      <li>Appartenance</li>
+      <li>Équilibre</li>
+      <li>Sens</li>
+      <li>Contenu</li>
+      <li>Rôle</li>
+      <li>Reconnaissance</li>
+      <li>Ambiance</li>
+      <li>Conditions de travail</li>
+      <li>Process</li>
+    </ul>
+    <p>J'ai choisi le <strong>process</strong> et l'<strong>équilibre</strong>.</p>
+    <p>Cette expérience m'aide à me projeter. Je sais aujourd'hui ce que j'aimerais faire et ce que je ne veux plus au travail, et je connais mieux les comportements à adopter et les codes du monde professionnel.</p>
+    <p>Je suis reconnaissant de ce que j'ai vécu dans mon entreprise, et je saurai valoriser cette expérience auprès de mes futurs employeurs, pour le poste que je viserai.</p>
+
+    <h3>Poster d'alternance</h3>
+    <figure class="plein-cadre">
+      <img src="img/poster-alternance.jpg" alt="Poster d'alternance reliant les quatre compétences du BUT GMP aux missions réalisées chez Sofripa">
+    </figure>
+    <p>Le poster relie les quatre compétences du BUT GMP à mes missions chez Sofripa.</p>
+    <div class="comp">
+      <article>
+        <h4>C1 – Spécifier les exigences industrielles</h4>
+        <div>
+          <h5>BUT GMP</h5>
+          <ul><li>Lire un cahier des charges</li><li>Comprendre les exigences (qualité / sécurité)</li><li>Vérifier la conformité produit</li></ul>
+        </div>
+        <div>
+          <h5>Sofripa</h5>
+          <ul><li>Contrôle d'un circuit électrique (circuit général)</li><li>Test d'une parcelle électrique avant la remise en route</li><li>Notifier le suivi des interventions réalisées</li></ul>
+        </div>
+        <p class="lien"><strong>Lien&nbsp;:</strong> comprendre les exigences permet de garantir une production conforme et sûre. Organiser un suivi pré / post intervention.</p>
+      </article>
+      <article>
+        <h4>C2 – Développer une solution technique</h4>
+        <div>
+          <h5>BUT GMP</h5>
+          <ul><li>Analyse fonctionnelle des systèmes</li><li>Recherche de solutions techniques</li></ul>
+        </div>
+        <div>
+          <h5>Sofripa</h5>
+          <ul><li>Diagnostic de pannes (porte et pont de quai)</li><li>Recherche de causes de dysfonctionnement</li><li>Proposition de réparations et recherche d'intervenants</li></ul>
+        </div>
+        <p class="lien"><strong>Lien&nbsp;:</strong> l'analyse des systèmes aide à trouver rapidement la cause d'une panne.</p>
+      </article>
+      <article>
+        <h4>C3 – Réaliser une intervention</h4>
+        <div>
+          <h5>BUT GMP</h5>
+          <ul><li>Méthodes de maintenance</li><li>Mise en œuvre de solutions</li><li>Respect des contraintes techniques</li></ul>
+        </div>
+        <div>
+          <h5>Sofripa</h5>
+          <ul><li>Maintenance préventive</li><li>Maintenance corrective</li><li>Respect de la sécurité</li></ul>
+        </div>
+        <p class="lien"><strong>Lien&nbsp;:</strong> les méthodes GMP et les conseils de nos professeurs, à travers des applications réelles, permettent d'intervenir efficacement et en sécurité.</p>
+      </article>
+      <article>
+        <h4>C4 – Exploiter un système de production</h4>
+        <div>
+          <h5>BUT GMP</h5>
+          <ul><li>Analyse de performance</li><li>Suivi des systèmes</li><li>Utilisation de données techniques</li></ul>
+        </div>
+        <div>
+          <h5>Sofripa</h5>
+          <ul><li>Analyse des pannes courantes</li><li>Suivi des résolutions (futures / passées)</li><li>Formation autour de l'expérience de tuteur et des pannes déjà vécues</li></ul>
+        </div>
+        <p class="lien"><strong>Lien&nbsp;:</strong> les données, conseils et expériences vécues permettent de fiabiliser le site complet.</p>
+      </article>
+    </div>
+
+    <h3>Ce que j'ai développé</h3>
+    <ul>
+      <li><strong>Rigueur et organisation</strong> : pour respecter les plans et les délais.</li>
+      <li><strong>Esprit d'équipe</strong> : travailler avec les autres pour atteindre un objectif.</li>
+      <li><strong>Autonomie et curiosité</strong> : chercher des solutions par moi-même en entreprise.</li>
+      <li><strong>Adaptation</strong> : jongler entre cours et missions en entreprise.</li>
+    </ul>
+
+    <h3>Une réussite</h3>
+    <p>Lors de mon alternance chez SOFRIPA, j'ai participé à <strong>la remise en service complète de moteurs de portes de quais endommagés par la foudre</strong>. Près de 40 moteurs étaient à remplacer.</p>
+    <p>J'ai aidé à <strong>démonter les anciens moteurs, installer les nouveaux, les tester et vérifier que toutes les portes fonctionnaient correctement</strong>. J'ai utilisé mes connaissances techniques en mécanique et électricité, ainsi que l'aide de mon tuteur, pour respecter les consignes de sécurité et le planning.</p>
+    <p><strong>Résultat&nbsp;: toutes les portes ont été remises en service rapidement</strong>, ce qui a permis à l'entreprise de reprendre ses activités normalement. Cette mission m'a appris <strong>la rigueur, l'organisation et l'importance de la coordination</strong> sur un projet concret et urgent.</p>
+
+    <h3>Étude d'une panne sur un camion</h3>
+    <figure class="plein-cadre">
+      <img src="img/sofripa-quais.jpg" alt="Camion blanc à quai devant le bâtiment Sofripa, portes de quai numérotées">
+    </figure>
+    <p>Dans le cadre de mon activité chez Sofripa, j'ai été confronté à une panne immobilisant un camion, dans un contexte d'urgence opérationnelle. L'enjeu était majeur : l'immobilisation du véhicule impactait directement les livraisons et pouvait compromettre le respect des délais ainsi que la qualité du service, notamment dans le transport frigorifique.</p>
+    <p>Après une première analyse de la situation et un échange avec le conducteur, il est apparu que la panne ne provenait pas d'un problème mécanique classique, mais d'un <strong>dysfonctionnement de l'ordinateur de bord du camion (calculateur)</strong>.</p>
+    <p>Ce défaut électronique empêchait le véhicule d'avancer correctement et provoquait également des anomalies secondaires, notamment des dysfonctionnements au niveau des feux et de l'éclairage intérieur. L'origine du problème nécessitait donc une <strong>reprogrammation du système électronique</strong> (nous ne pouvions pas intervenir cette fois-ci, afin de réduire les coûts).</p>
+    <p>Face à un délai très serré, plusieurs actions ont été mises en place&nbsp;:</p>
+    <ol class="etapes">
+      <li>Analyse rapide des symptômes et validation du diagnostic</li>
+      <li>Prise de contact avec le prestataire spécialisé</li>
+      <li>Organisation de l'intervention pour la reprogrammation du calculateur</li>
+      <li>Suivi de la remise en service du véhicule, afin de garantir rapidement sa fiabilité (les délais étant très serrés au départ)</li>
+    </ol>
+    <p>Cette expérience m'a permis de développer et de démontrer&nbsp;:</p>
+    <ul>
+      <li>Ma réactivité face à une situation critique</li>
+      <li>Ma capacité d'analyse dans un contexte technique</li>
+      <li>Ma gestion des priorités sous pression</li>
+      <li>Ma coordination avec différents interlocuteurs (conducteur, maintenance, hiérarchie)</li>
+      <li>Mon sens des responsabilités face aux enjeux opérationnels</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SAFRAN -->
+<section class="sec clair" id="safran">
+  <div class="in">
+    <h2>Projets réalisés chez Safran Aircraft Engine</h2>
+    <p>Mon alternance chez Safran (2024 – 2025), sur le site de Villaroche, sur les programmes LEAP et M88, m'a amené à analyser des problèmes d'assemblage et à concevoir les outillages pour y répondre, dont un <strong>gabarit d'alignement de module pour le M88</strong>, le moteur du Rafale. J'en parle plus en détail dans la partie « Compétences et points forts ».</p>
+    <p>Mes projets sont présentés dans un portfolio à part, accessible avec ce lien ou avec le QR code.</p>
+    <div class="qr">
+      <img src="img/qr-ville-davray.jpg" alt="QR code menant au portfolio Ville d'Avray">
+      <p><a href="https://portfolio.cva.parisnanterre.fr/view/view.php?id=15925" target="_blank" rel="noopener"><strong>Voir le portfolio Ville d'Avray</strong></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS PERSONNELS -->
+<section class="sec" id="projets">
+  <div class="in">
+    <h2>Projets personnels</h2>
+
+    <div class="deux">
+      <div>
+        <h3 style="margin-top:0">Création d'une marque de vêtements</h3>
+        <p>Je voulais concevoir et développer une marque de vêtements, de l'idée de départ jusqu'à la création finale et la communication.</p>
+        <p>J'ai travaillé l'identité de la marque (positionnement, valeurs, cible), le design des produits, la communication et la promotion. J'ai découvert le côté entrepreneurial et la gestion d'une marque, et j'ai progressé en couture, côté adresse comme côté créativité.</p>
+        <p>Ça m'a aussi appris à analyser un marché et à avoir une vision plus stratégique.</p>
+      </div>
+      <figure>
+        <img src="img/portrait-marque.jpg" alt="Photographie en noir et blanc, de nuit, d'un homme portant une casquette et un t-shirt de la marque">
+      </figure>
+    </div>
+
+    <h3>Veridia, vases décoratifs imprimés en 3D</h3>
+    <p>Véridia, c'est ma marque de vases décoratifs imprimés en 3D et fabriqués sur commande. Je m'occupe aussi bien de la marque que de la vente. Pour les particuliers, je réalise des contenus vidéo pour TikTok. Pour les professionnels, j'ai construit une stratégie commerciale destinée aux fleuristes et aux petits commerces, avec une grille de prix par paliers et un flyer.</p>
+    <div class="galerie">
+      <figure>
+        <img src="img/veridia-collection.jpg" alt="Collection de vases Véridia aux formes organiques et aux finitions texturées, dont un grand vase en anneau rose, avec des fleurs séchées et un pot vert à cannelures">
+        <figcaption>La collection Véridia.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/veridia-cannelures.jpg" alt="Trois vases cannelés imprimés en 3D, en crème, blanc et rose poudré, garnis de fleurs séchées">
+        <figcaption>Vases cannelés, en trois coloris.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/veridia-vert.jpg" alt="Pot géométrique vert à lignes verticales, avec une plante, posé sur un meuble en bois">
+        <figcaption>Pot géométrique vert.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/veridia-jardin.jpg" alt="Vase blanc aux courbes douces, avec de la lavande séchée, posé sur un tabouret dans un jardin au coucher du soleil">
+        <figcaption>Vase blanc, en extérieur.</figcaption>
+      </figure>
+    </div>
+    <p><a class="btn plein" href="https://veridiadesign.fr" target="_blank" rel="noopener">Visiter veridiadesign.fr</a></p>
+
+    <h3>Création d'entreprise</h3>
+    <p>Une réflexion complète sur la création d'une entreprise, de zéro jusqu'au chiffre d'affaires&nbsp;: étude de marché, modèle économique, clientèle cible et prévisionnel.</p>
+    <p>Ce projet m'a donné une vision globale du fonctionnement d'une entreprise. J'ai rencontré les premiers problèmes et je me suis retrouvé face aux murs les plus solides de l'entrepreneuriat. J'ai compris les enjeux financiers et organisationnels, et j'ai progressé en gestion de projet, en prise de décision et en planification stratégique.</p>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHIE -->
+<section class="sec clair" id="photographie">
+  <div class="in">
+    <h2>Photographie et voyages</h2>
+    <p>La photo fait partie de mes centres d'intérêt, comme les voyages et la découverte. Sauf mention contraire, les photographies de ce portfolio sont issues de mon portfolio photographique.</p>
+    <div class="galerie g2">
+      <figure>
+        <img src="img/photo-riviere.jpg" alt="Photographie de voyage">
+      </figure>
+      <figure>
+        <img src="img/photo-crique.jpg" alt="Photographie de voyage">
+      </figure>
+      <figure>
+        <img src="img/photo-mer.jpg" alt="Photographie de voyage">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- EXPÉRIENCES COMPLÉMENTAIRES -->
+<section class="sec" id="experiences">
+  <div class="in">
+    <h2>Autres expériences professionnelles</h2>
+
+    <h3 style="margin-top:0">Archivage, site d'Arcueil (Armée de Terre)</h3>
+    <p>Mission d'archivage et de classement de documents administratifs sensibles, sur le site militaire d'Arcueil. Il fallait être rigoureux et organisé, respecter les procédures et la confidentialité. J'y ai développé ma méthode de travail et mon sens des responsabilités, dans un environnement structuré et exigeant, celui de la DRSD.</p>
+    <p>J'ai aussi pris goût au monde militaire. Il m'intéresse beaucoup aujourd'hui, et dans un futur proche c'est un milieu dans lequel je veux travailler.</p>
+
+    <h3>Gardien d'immeuble</h3>
+    <p>Je m'occupais d'un immeuble au quotidien&nbsp;: entretien des parties communes, relation avec les résidents, gestion des incidents, suivi des prestataires. Ce poste demandait de l'autonomie, le sens du service, de la réactivité et un bon contact avec les gens.</p>
+    <p>Il m'a aussi fait comprendre à quel point un travail peut être dur physiquement, avec une vraie fatigue physique et mentale sur certaines tâches. Il m'a donné le goût du travail.</p>
+
+    <h3>Serveur dans un restaurant semi-gastronomique</h3>
+    <p>Accueil et service des clients, prise de commandes, encaissements, avec un niveau d'exigence élevé, à la hauteur de l'ambition du restaurant. J'y ai développé le dynamisme, l'adresse (orale et physique), l'esprit d'équipe et le sens du service, dans un environnement qui va vite.</p>
+
+    <h3>Dans le monde professionnel</h3>
+    <p>Avec le monde adulte et la hiérarchie, mes relations sont simples et respectueuses. Pour moi, le respect est la base. J'écoute les consignes, j'essaie de faire au mieux ce qu'on me demande, et je n'hésite pas à poser des questions quand je ne comprends pas.</p>
+    <p>Je vois la hiérarchie comme un soutien plus que comme une contrainte&nbsp;: les responsables sont là pour guider, organiser le travail et nous aider à progresser. J'essaie d'être sérieux, tout en restant naturel.</p>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="sec sombre" id="conclusion">
+  <div class="in">
+    <h2>Conclusion</h2>
+    <h3 style="margin-top:0">Bilan personnel de compétences professionnelles</h3>
+    <p>Je me suis impliqué à chaque étape de mes projets&nbsp;: de la conception à l'usinage, en passant par la communication, les choix techniques et le suivi qualité. J'ai cherché à valoriser le travail collectif tout en apportant mes idées, en corrigeant des défauts et en soutenant l'équipe dès que je le pouvais.</p>
+    <p>Je pense être un atout pour ma classe et pour les groupes dans lesquels je m'implique. Je saurai le montrer, et des preuves valent mieux que mille mots.</p>
+    <h3>Ce que j'ai aimé dans ma formation</h3>
+    <p>Dans le BUT GMP à l'IUT de Saint-Denis, j'ai apprécié le côté concret et polyvalent&nbsp;: on conçoit, on fabrique et on teste des systèmes, mais on apprend aussi à organiser la production, le management industriel au sens large et le travail en équipe. L'alternance chez Sofripa rend tout ça encore plus motivant.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec sombre contact" id="contact">
+  <div class="in">
+    <h2>Me contacter</h2>
+    <p>Je reste joignable par mail&nbsp;:</p>
+    <p><a class="mail" href="mailto:clementinperrault@gmail.com">clementinperrault@gmail.com</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="in">Portfolio de Clémentin Perrault – BUT Génie Mécanique et Productique, IUT de Saint-Denis<div class="credit">Sauf mention contraire, les photographies de ce site sont issues de mon portfolio photographique.</div></div>
+</footer>
+
+</body>
+</html>
